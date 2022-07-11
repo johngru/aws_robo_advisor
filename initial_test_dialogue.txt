@@ -1,0 +1,19 @@
+ User: I want the best option to invest for my retirement
+
+ Robo advisor: Thank you for trusting me to help, could you please give me your name?
+
+ User: John
+
+ Robo advisor: How old are you?
+
+ User: 34
+
+ Robo advisor: How much do you want to invest?
+ 
+ User: 50000
+
+ Robo advisor: What level of investment risk would you like to take? (None, Low, Medium, High)
+
+ User: Medium
+ 
+ Robo advisor: Thanks, now I will look for the best investment portfolio for you.
