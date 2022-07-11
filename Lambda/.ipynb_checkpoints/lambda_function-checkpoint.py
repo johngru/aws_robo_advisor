@@ -12,6 +12,15 @@ def parse_int(n):
     except ValueError:
         return float("nan")
 
+def parse_float(n):
+    """
+    Securely converts a non-numeric value to float.
+    """
+    try:
+        return float(n)
+    except ValueError:
+        return float("nan")
+    
 
 def build_validation_result(is_valid, violated_slot, message_content):
     """
@@ -124,9 +133,54 @@ def recommend_portfolio(intent_request):
     risk_level = get_slots(intent_request)["riskLevel"]
     source = intent_request["invocationSource"]
 
-    # YOUR CODE GOES HERE!
+    # Validate that age is greater than zero and less than 65
+    if age is not None:
+        age = parse_int(
+            age
+        )     
+    if (age<0):
+        return build_validation_result(
+            False,
+            "age",
+            "Please enter a valid age greater than 0."
+        )
+    elif (age>=65):
+        return build_validation_result(
+            False,
+            "age",
+            "Sorry, this service is intended for ages less than 65."
+        )
 
+    # Validate the investment amount, it should be equal to or greater than 5000
+    if investment_amount is not None:
+        investment_amount = parse_float(
+            investment_amount
+        )  # Since parameters are strings it's important to cast values
+    if investment_amount < 5000:
+        return build_validation_result(
+            False,
+            "investmentAmount",
+            "The investment amount should be equal to or greater than $5,000.00."
+        )
+    # Ensure risk_level is proper case:
+    if risk_level is not None:
+        risk_level = risk_level.lower()
+    
+    recommendations = {
+        "none": "100% bonds (AGG), 0% equities (SPY)",
+        "low":"60% bonds (AGG), 40% equities (SPY)",
+        "medium":"40% bonds (AGG), 60% equities (SPY)",
+        "high":"20% bonds (AGG), 80% equities (SPY)"
+    }
+    
+    return build_validation_result(
+            True,
+            None,
+            f"Based on your {risk_level} risk level, "
+            f"I recommend a portfolio mix of {recommendations[risk_level]}."
+        )
 
+    
 ### Intents Dispatcher ###
 def dispatch(intent_request):
     """
