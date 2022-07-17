@@ -39,12 +39,19 @@ The RoboAdvisor is initialized through Amazon Lex.  It is provided with some sam
 
 Before the Lambda function is created or initialized, this shell chat bot is built and a sample dialogue is created to look something like the video below:
 
-![Amazon Lex - Initial Convo](./initial_dialogue.gif)
+![Amazon Lex - Initial Convo](Video_Demos/initial_dialogue.gif)
+
+After the bot's framework and slots are initialized, the Lambda function is written to validate and fullfill the user's request for a portfolio recommendation.  The Lambda function should give and handle all test events found in the json responses in the [Test_Events directory](Test_Events).
+
+An example of how the RoboAdvisor handles error inputs by the user is demonstrated in the video dialogue below:
+
+![Amazon Lex - Error Conversation](Video_Demos/error_tests_with_lambda_integration.gif)
 
 
-The notebook should look like the screenshot below:
+A successful user exchange dialogue with the RoboAdvisor looks like something below:
 
-<img src="./images/venture_funding_with_deep_learning_screenshot.png" alt="Screenshot of venture_funding_with_deep_learning.ipynb" width="100%"/>
+![Amazon Lex - Successful Conversation](Video_Demos/lambda_integration.gif)
+
 
 ## Data Sources
 
@@ -54,7 +61,7 @@ The seed code for this RoboAdvisor is provided by the course materials from a UC
 
 ## Contributors
 
-The seed code is from the course material from a UCBerkeley Extension program.  This analysis is written and performed by John Gruenewald.<br><br>
+The seed code is from the course material from a UCBerkeley Extension program.  This chatbot is written and demonstrated by John Gruenewald.<br><br>
 For more information, contact **John Gruenewald**:<br>
 **e-mail:** [john.h.gruenewald@gmail.com](mailto:john.h.gruenewald@gmail.com)<br> **linked-in:**  [jhgruenewald](https://www.linkedin.com/in/jhgruenewald/)<br>**twitter:**  [@GruenewaldJohn](https://twitter.com/GruenewaldJohn)<br>**medium:**  [@comput99](https://medium.com/@comput99)
 
