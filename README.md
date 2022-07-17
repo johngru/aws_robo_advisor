@@ -39,7 +39,7 @@ The RoboAdvisor is initialized through Amazon Lex.  It is provided with some sam
 
 Before the Lambda function is created or initialized, this shell chat bot is built and a sample dialogue is created to look something like the video below:
 
-![Amazon Lex - Initial Convo](initial_dialogue.gif)
+![Amazon Lex - Initial Convo](./initial_dialogue.gif)
 
 
 The notebook should look like the screenshot below:
